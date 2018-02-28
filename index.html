@@ -10,16 +10,21 @@
 <body>
  
   <div class = "row">
+  	
     <div class = "leftColumn">
       <div class="card">
                 <button class="btn buttonStyle" onclick="dropForTask()"><i class="fas fa-tasks"></i> Add Task</button>
         <div id="myDropdown" class="dropdown-content">
-          <br>
+          
          <input type="text" id="inputTask">
-         <button id="addTask" class="btn-block buttonStyle"><i class="far fa-plus-circle"></i> add</button>
+         <button id="addTask" class="btn-block buttonStyle"><i class="fa fa-plus-circle"></i> add</button>
         </div>
       </div>
+      <div id="del">
+       <button id="deleteAll" class="btn-danger btn-block buttonStyle"><i class="far fa-trash-alt"></i>Delete All Tasks</button>
     </div>
+   </div>
+
     <div class = "centerColumn">
       <div class="cardCenter" id="listToDo">
         <h2>To-Do-List</h2>
@@ -30,6 +35,7 @@
           </div>
       </div>
     </div>
+   
   
   </div>
   
@@ -41,7 +47,7 @@
 <script type="text/javascript">
   $(document).ready(function(){
 
-  	var arr=["#6ec0e7","#b9c3c7","#b9c3c7"]
+  	var arr=["#6ec0e7","#53e3e0","#b9c3c7","#85c9ac","#42a2ea","#b9c3c7","#0c77c7"]
   	
 
   	 
@@ -59,12 +65,24 @@
               $display.text(inputText) ;
               $display.appendTo('#list')
             }
+            $( "#deleteAll" ).click(function() {
 
-            $($display).on('click',function(){
+            	$($display).hide()
+            	        setTimeout(function(){
+						   window.location.reload();
+						}, 1000	);
+ 			
+ 			 
+ 			
+			})
+
+
+            $($display).on('dblclick',function(){
             	$($display).hide()
 
         })
         })
+
         
       
      })
