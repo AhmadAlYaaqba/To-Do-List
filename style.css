@@ -10,11 +10,17 @@ body {
     padding-left: 30px;
     margin-top: 70px;
 }
-.rightColumn {
+.centerColumn {
     float: center;
     width: 61%;
     padding-left: 40px;
      margin-top: 70px;
+}
+.rightColumn {   
+    float: right;
+    width: 15%;
+    padding-left: 30px;
+    margin-top: 70px;
 }
 
 .card {
@@ -36,3 +42,50 @@ body {
     width : 100%;
 }
 
+.buttonDropList {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonDropList:hover, .buttonDropList:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    
+}
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}
+
+.ProjectUl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color:white;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+li {
+    border: solid;
+    border-color: #208fa7;
+    margin-top: 10px;
+}
