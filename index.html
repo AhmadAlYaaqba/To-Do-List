@@ -12,18 +12,23 @@
   <div class = "row">
     <div class = "leftColumn">
       <div class="card">
-        <button id="addProject" class="btn btn-primary"><i class="fas fa-briefcase"></i> Add Project</button>
+        <button id="addProject" class="btn buttonStyle" onclick="dropForProj()"><i class="fas fa-briefcase"></i> Add Project</button>
+        <div id="myDropdownP" class="dropdown-content">
+          <br>
+         <input type="text" id="inputProject">
+         <button id="addProj" class="btn-block buttonStyle"><i class="far fa-plus-circle"></i> add</button>
+        </div>
         <br>
-        <button class="btn btn-primary" onclick="myFunction()"><i class="fas fa-tasks"></i> Add Task</button>
+        <button class="btn buttonStyle" onclick="dropForTask()"><i class="fas fa-tasks"></i> Add Task</button>
         <div id="myDropdown" class="dropdown-content">
           <br>
          <input type="text" id="inputTask">
-         <button id="addTask">add</button>
+         <button id="addTask" class="btn-block buttonStyle"><i class="far fa-plus-circle"></i> add</button>
         </div>
       </div>
     </div>
     <div class = "centerColumn">
-      <div class="card" id="listToDo">
+      <div class="cardCenter" id="listToDo">
         <h2>To-Do-List</h2>
           <div>
             <ol id="list">
@@ -34,11 +39,9 @@
     </div>
     <div class ="rightColumn">
       <div class="card">
-        <ul class="ProjectUl">
-         <li><a href="#home">Home</a></li>
-         <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-         <li><a href="#about">About</a></li>
+        <h3>Your Projects</h3>
+        <ul class="ProjectUl" id="ProjectList">
+         
         </ul>
       </div>
     </div>
@@ -62,9 +65,23 @@
               $display.appendTo('#list')
             }
         })
-    })
-  function myFunction() {
+        $("#addProj").on('click',function(){
+            var $display = $('<li></li>')
+            var inputText = $('#inputProject').val();
+            if(inputText === ""){
+              alert("Please Enter text")
+            }
+            else {
+              $display.text(inputText) ;
+              $display.appendTo('#ProjectList')
+            }
+        })
+     })
+  function dropForTask() {
     document.getElementById("myDropdown").classList.toggle("show");
+  }
+  function dropForProj() {
+    document.getElementById("myDropdownP").classList.toggle("show");
   }
 </script>
 </body>
