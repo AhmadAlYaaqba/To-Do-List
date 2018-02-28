@@ -12,14 +12,7 @@
   <div class = "row">
     <div class = "leftColumn">
       <div class="card">
-        <button id="addProject" class="btn buttonStyle" onclick="dropForProj()"><i class="fas fa-briefcase"></i> Add Project</button>
-        <div id="myDropdownP" class="dropdown-content">
-          <br>
-         <input type="text" id="inputProject">
-         <button id="addProj" class="btn-block buttonStyle"><i class="far fa-plus-circle"></i> add</button>
-        </div>
-        <br>
-        <button class="btn buttonStyle" onclick="dropForTask()"><i class="fas fa-tasks"></i> Add Task</button>
+                <button class="btn buttonStyle" onclick="dropForTask()"><i class="fas fa-tasks"></i> Add Task</button>
         <div id="myDropdown" class="dropdown-content">
           <br>
          <input type="text" id="inputTask">
@@ -37,14 +30,7 @@
           </div>
       </div>
     </div>
-    <div class ="rightColumn">
-      <div class="card">
-        <h3>Your Projects</h3>
-        <ul class="ProjectUl" id="ProjectList">
-         
-        </ul>
-      </div>
-    </div>
+  
   </div>
   
   
@@ -54,35 +40,38 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
+
+  	var arr=["#6ec0e7","#b9c3c7","#b9c3c7"]
+  	
+
+  	 
         $("#addTask").on('click',function(){
+
             var $display = $('<li></li>')
             var inputText = $('#inputTask').val();
             if(inputText === ""){
               alert("Please Enter text")
             }
             else {
+             var rand=Math.floor(Math.random()*arr.length)
+        	 $('.cardCenter').css('background-color',arr[rand])
+        	 $($display).css('background-color',arr[rand])
               $display.text(inputText) ;
               $display.appendTo('#list')
             }
+
+            $($display).on('click',function(){
+            	$($display).hide()
+
         })
-        $("#addProj").on('click',function(){
-            var $display = $('<li></li>')
-            var inputText = $('#inputProject').val();
-            if(inputText === ""){
-              alert("Please Enter text")
-            }
-            else {
-              $display.text(inputText) ;
-              $display.appendTo('#ProjectList')
-            }
         })
+        
+      
      })
   function dropForTask() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
-  function dropForProj() {
-    document.getElementById("myDropdownP").classList.toggle("show");
-  }
+ 
 </script>
 </body>
 </html>
