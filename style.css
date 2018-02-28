@@ -1,0 +1,38 @@
+
+body {
+  background: url('img/Background.jpg') no-repeat fixed;
+  background-size: cover;
+  font-family: cursive,sans-serif;
+}
+.leftColumn {   
+    float: left;
+    width: 21%;
+    padding-left: 30px;
+    margin-top: 70px;
+}
+.rightColumn {
+    float: center;
+    width: 61%;
+    padding-left: 40px;
+     margin-top: 70px;
+}
+
+.card {
+    text-align: center;
+     background-color: white;
+     padding: 20px;
+     margin-top: 20px;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to top, #73f2fc , #028792);;
+    margin-top: 20px;
+    width : 100%;
+}
+
