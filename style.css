@@ -1,4 +1,3 @@
-
 body {
   background: url('img/Background.jpg') no-repeat fixed;
   background-size: cover;
@@ -35,70 +34,26 @@ body {
     height: 550px;
     overflow: auto;
 }
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-.footer {
-    padding: 20px;
-    text-align: center;
-    background: linear-gradient(to top, #73f2fc , #028792);;
-    margin-top: 20px;
-    width : 100%;
-}
 
 .buttonStyle {
     background-color: #208fa7;
     color: white;
 }
 
-.buttonDropList {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.buttonDropList:hover, .buttonDropList:focus {
-    background-color: #2980B9;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
+.addInputHidden {
     display: none;
     background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-
-    
+    overflow: auto;    
 }
-.dropdown a:hover {background-color: #ddd}
 
-.show {display:block;}
-
-.ProjectUl {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color:white;
+.show {
+    display:block;
 }
+
 #deleteAll{
     height: 250px
 }
 
-li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-}
 li {
     border: solid;
     border-color: #208fa7;

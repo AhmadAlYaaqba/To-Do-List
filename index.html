@@ -11,7 +11,7 @@
     <div class = "leftColumn">
       <div class="card">
         <button class="btn buttonStyle" onclick="dropForTask()"><i class="fas fa-tasks"></i> Add Task</button>
-        <div id="myDropdown" class="dropdown-content"> 
+        <div id="hiddenDiv" class="addInputHidden"> 
           <input type="text" id="inputTask">
           <button id="addTask" class="btn-block buttonStyle"><i class="fa fa-plus-circle"></i> add</button>
         </div>
@@ -65,7 +65,7 @@
     })     
   })
   function dropForTask() {
-    document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById("hiddenDiv").classList.toggle("show");
   }
 </script>
 </body>
