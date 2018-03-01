@@ -19,6 +19,10 @@
       <div id="del">
        <button id="deleteAll" class="btn-danger btn-block buttonStyle"><i class="far fa-trash-alt"></i> Delete All Tasks</button>
       </div>
+      <div>
+        <br>
+       <button id="deleteSel" class="btn-danger btn-block buttonStyle"><i class="fas fa-check-square"></i> Delete Selected Tasks</button>
+      </div>
    </div>
     <div class = "centerColumn">
       <div class="cardCenter" id="listToDo">
@@ -42,6 +46,7 @@
   	var arr=["#6ec0e7","#53e3e0","#b9c3c7","#85c9ac","#42a2ea","#b9c3c7","#0c77c7"]
     $("#addTask").on('click',function(){
       var $display = $('<li></li>')
+     
       var inputText = $('#inputTask').val();
       if(inputText === ""){
         alert("Please Enter text")
@@ -51,18 +56,23 @@
         $('.cardCenter').css('background-color',arr[rand])
         $($display).css('background-color',arr[rand])
         $display.text(inputText) ;
+        $display= $( $display ).append("<span style='display:inline-block; width:30px;'></span><input type='checkbox' name='listboxes'>")
         $display.appendTo('#list')
       }
-      $( "#deleteAll" ).click(function() {
-      	$($display).hide()
-      	setTimeout(function(){
-  		    window.location.reload();
-  		  }, 1000	);		 
+      $( "#deleteSel" ).on('click',function() {
+      	$("input:checked").parent().hide()		 
   		})
+      $("#deleteAll").on('click', function(){
+        $($display).hide();
+        setTimeout(function(){
+          window.location.reload();
+        }, 1000 );
+      })
       $($display).on('dblclick',function(){
         $($display).hide()
       })
-    })     
+    }) 
+     
   })
   function dropForTask() {
     document.getElementById("hiddenDiv").classList.toggle("show");

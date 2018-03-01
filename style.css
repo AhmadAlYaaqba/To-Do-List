@@ -54,6 +54,10 @@ body {
     height: 250px
 }
 
+#deleteSel{
+    height: 100px
+}
+
 li {
     border: solid;
     border-color: #208fa7;
