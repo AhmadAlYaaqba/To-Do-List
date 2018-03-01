@@ -9,25 +9,22 @@ body {
     width: 21%;
     padding-left: 30px;
     margin-top: 70px;
+
 }
 .centerColumn {
     float: center;
     width: 61%;
     padding-left: 40px;
      margin-top: 70px;
-}
-.rightColumn {   
-    float: right;
-    width: 15%;
-    padding-left: 30px;
-    margin-top: 70px;
-}
 
+}
+    
 .card {
     text-align: center;
      background-color: white;
      padding: 20px;
      margin-top: 20px;
+     margin-bottom: 20px
 }
 .cardCenter {
     text-align: center;
@@ -79,6 +76,7 @@ body {
     background-color: #f1f1f1;
     min-width: 160px;
     overflow: auto;
+
     
 }
 .dropdown a:hover {background-color: #ddd}
@@ -90,6 +88,9 @@ body {
     margin: 0;
     padding: 0;
     background-color:white;
+}
+#deleteAll{
+    height: 250px
 }
 
 li a {
