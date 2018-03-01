@@ -5,26 +5,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-
 </head>
 <body>
- 
   <div class = "row">
-  	
     <div class = "leftColumn">
       <div class="card">
-                <button class="btn buttonStyle" onclick="dropForTask()"><i class="fas fa-tasks"></i> Add Task</button>
-        <div id="myDropdown" class="dropdown-content">
-          
-         <input type="text" id="inputTask">
-         <button id="addTask" class="btn-block buttonStyle"><i class="fa fa-plus-circle"></i> add</button>
+        <button class="btn buttonStyle" onclick="dropForTask()"><i class="fas fa-tasks"></i> Add Task</button>
+        <div id="myDropdown" class="dropdown-content"> 
+          <input type="text" id="inputTask">
+          <button id="addTask" class="btn-block buttonStyle"><i class="fa fa-plus-circle"></i> add</button>
         </div>
       </div>
       <div id="del">
-       <button id="deleteAll" class="btn-danger btn-block buttonStyle"><i class="far fa-trash-alt"></i>Delete All Tasks</button>
-    </div>
+       <button id="deleteAll" class="btn-danger btn-block buttonStyle"><i class="far fa-trash-alt"></i> Delete All Tasks</button>
+      </div>
    </div>
-
     <div class = "centerColumn">
       <div class="cardCenter" id="listToDo">
         <h2>To-Do-List</h2>
@@ -35,61 +30,43 @@
           </div>
       </div>
     </div>
-   
-  
   </div>
   
-  
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- BootStrap Links -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+ <!-- end of bootstrap Links -->
 <script type="text/javascript">
   $(document).ready(function(){
-
   	var arr=["#6ec0e7","#53e3e0","#b9c3c7","#85c9ac","#42a2ea","#b9c3c7","#0c77c7"]
-  	
-
-  	 
-        $("#addTask").on('click',function(){
-
-            var $display = $('<li></li>')
-            var inputText = $('#inputTask').val();
-            if(inputText === ""){
-              alert("Please Enter text")
-            }
-            else {
-             var rand=Math.floor(Math.random()*arr.length)
-        	 $('.cardCenter').css('background-color',arr[rand])
-        	 $($display).css('background-color',arr[rand])
-              $display.text(inputText) ;
-              $display.appendTo('#list')
-            }
-            $( "#deleteAll" ).click(function() {
-
-            	$($display).hide()
-            	        setTimeout(function(){
-						   window.location.reload();
-						}, 1000	);
- 			
- 			 
- 			
-			})
-
-
-            $($display).on('dblclick',function(){
-            	$($display).hide()
-
-        })
-        })
-
-        
-      
-     })
+    $("#addTask").on('click',function(){
+      var $display = $('<li></li>')
+      var inputText = $('#inputTask').val();
+      if(inputText === ""){
+        alert("Please Enter text")
+      }
+      else {
+        var rand=Math.floor(Math.random()*arr.length)
+        $('.cardCenter').css('background-color',arr[rand])
+        $($display).css('background-color',arr[rand])
+        $display.text(inputText) ;
+        $display.appendTo('#list')
+      }
+      $( "#deleteAll" ).click(function() {
+      	$($display).hide()
+      	setTimeout(function(){
+  		    window.location.reload();
+  		  }, 1000	);		 
+  		})
+      $($display).on('dblclick',function(){
+        $($display).hide()
+      })
+    })     
+  })
   function dropForTask() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
- 
 </script>
 </body>
 </html>
