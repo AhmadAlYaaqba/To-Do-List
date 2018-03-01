@@ -72,8 +72,12 @@
         $($display).hide()
       })
     }) 
-     
   })
+  $("#inputTask").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#addTask").click();
+    }
+  });
   function dropForTask() {
     document.getElementById("hiddenDiv").classList.toggle("show");
   }
